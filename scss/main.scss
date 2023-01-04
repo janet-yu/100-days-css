@@ -1,0 +1,36 @@
+@import './resets';
+@import './day-1';
+@import './day-2';
+@import './day-4';
+@import './day-6';
+@import './day-7';
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+$laptop: 1024px;
+$tablet: 768px;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+
+  @media screen and (max-width: $laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: $tablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.grid-item {
+  aspect-ratio: 1;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr;
+}

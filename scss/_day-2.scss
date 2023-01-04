@@ -1,0 +1,148 @@
+/* DAY 2: MENU BURGER */
+#day-2 {
+  background: #3faf82;
+}
+
+.day-2__bar {
+  height: 10px;
+  width: 100px;
+  margin-bottom: 16px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in;
+  position: relative;
+}
+
+/* .bar-3 {
+  top: -25px;
+} */
+
+.day-2__burger {
+  background: none;
+  border: none;
+}
+
+.day-2__burger:hover {
+  cursor: pointer;
+}
+
+.day-2__bar {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform-origin: center;
+}
+
+.bar-1 {
+  animation-name: noAnimationLeft;
+}
+
+.bar-3 {
+  animation-duration: 0.8s;
+  animation-name: noAnimationRight;
+}
+
+.day-2__burger.active .bar-3 {
+  animation-name: rotateRight;
+}
+
+.day-2__burger.active .bar-1 {
+  animation-name: rotateLeft;
+}
+
+.bar-2 {
+  animation-name: reverse-animation-bar-2;
+}
+
+.day-2__burger.active .bar-2 {
+  animation-name: animation-bar-2;
+  animation-duration: 0.5s;
+}
+.no-animation {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+@keyframes rotateLeft {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(26px);
+  }
+
+  100% {
+    transform: translateY(26px) rotate(45deg);
+  }
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-26px);
+  }
+
+  100% {
+    transform: translateY(-26px) rotate(135deg);
+  }
+}
+
+@keyframes noAnimationLeft {
+  0% {
+    transform: translateY(26px) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(26px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes noAnimationRight {
+  0% {
+    transform: translateY(-26px) rotate(135deg);
+  }
+
+  50% {
+    transform: translateY(-26px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animation-bar-2 {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes reverse-animation-bar-2 {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

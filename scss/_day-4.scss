@@ -1,0 +1,74 @@
+.day-4 {
+  background: #e56262;
+
+  &__loading-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-items: center;
+  }
+
+  &__loading-container div {
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 100%;
+    background: #fff;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 2s;
+  }
+
+  &__circle-1 {
+    width: 120px;
+    height: 120px;
+    animation-name: grow-animation-3;
+  }
+
+  &__circle-2 {
+    width: 90px;
+    height: 90px;
+    animation-name: grow-animation-2;
+  }
+
+  &__circle-3 {
+    width: 30px;
+    height: 30px;
+    animation-name: grow-animation-1;
+  }
+}
+
+// Animation delays wont work since the delay only refers to the START of the animation
+// Once the circles expand all the way, they won't delay and wait for the
+@keyframes grow-animation-1 {
+  0%,
+  70% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow-animation-2 {
+  0%,
+  40% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow-animation-3 {
+  0%,
+  10% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
